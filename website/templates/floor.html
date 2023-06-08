@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floors</title>
+
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body{
+            background-image: url('/static/bkg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            text-align: center;
+            width: 450px;
+            padding: 30px;
+            margin: 0 auto;
+            margin-top: 20px;
+            background-color: #003957;
+            border-style: solid ;
+            border-width: 3px ;
+            border-color: black;
+        }
+        h1 {
+                text-align: center;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        font-size: 30px;
+        font-family: "Press Start 2P", cursive;
+        color: #ffd700;
+        text-shadow: 2px 2px rgba(139, 69, 19, 0.8),
+        4px 4px rgba(139, 69, 19, 0.8),
+        6px 6px rgba(139, 69, 19, 0.8),
+         8px 8px rgba(165, 42, 42, 0.8),
+         10px 10px rgba(165, 42, 42, 0.8); 
+      }
+        .PixellButton2 {
+
+            font-family: 'Press Start 2P', cursive;
+            font-size: 20px;
+            width: 100px;
+            height: 80px;
+            margin: 20px;
+            background-color: rgb(208, 90, 129);
+
+            border-top: 1px rgb(90, 208, 90);
+            border-left: 1px rgb(90, 208, 90);
+
+            border-color: rgb(56, 180, 7);
+            border-right: 4px solid rgb(100, 0, 83);
+            border-bottom: 6px solid rgb(100, 0, 83);
+
+            box-shadow: -3px 0 0 0 black,
+                3px 0 0 0 black,
+                0 -3px 0 0 black,
+                0 3px 0 0 black;
+        }
+
+        .PixellButton2:hover {
+
+            background-color: rgb(179, 69, 120);
+
+            border-top: 1px rgb(179, 69, 120);
+            border-left: 1px rgb(179, 69, 120);
+
+            border-color: rgb(56, 180, 7);
+            border-right: 6px solid rgb(78, 24, 54);
+            border-bottom: 8px solid rgb(78, 24, 54);
+        }
+
+        .PixellButton2:active {
+            background-color: #5BC0F8;
+            transform: translateY(3px);
+            width: 100px;
+            border-right: 4px solid #0081C9;
+            border-bottom: 5px solid #0081C9;
+        }
+
+
+        @media only screen and (max-width: 850px) {
+            .PixellButton2 {
+                background-color: #5BC0F8;
+
+                border-top: 1px #5BC0F8;
+                border-left: 1px #5BC0F8;
+
+                border-color: #0081C9;
+                border-right: 6px solid #0081C9;
+                border-bottom: 8px solid #0081C9;
+            }
+
+        }
+        .spacer{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+        <h1>Select floor</h1>
+    <div class="container">
+        <a  href="/1st-floor"><button type="button"  class="PixellButton2">1</button></a>
+        <a  href="/2nd-floor"><button type="button"  class="PixellButton2">2</button></a>       
+        <a  href="/3rd-floor"><button type="button"  class="PixellButton2">3</button></a>     
+        <a  href="/4th-floor"><button type="button"  class="PixellButton2">4</button></a>   
+        <a  href="/5th-floor"><button type="button"  class="PixellButton2">5</button></a>
+        <a  href="/6th-floor"><button type="button"  class="PixellButton2">6</button></a>
+        <a  href="/7th-floor"><button type="button"  class="PixellButton2">7</button></a>  
+        <a  href="/8th-floor"><button type="button"  class="PixellButton2">8</button></a> 
+        <a  href="/9th-floor"><button type="button"  class="PixellButton2">9</button></a>  
+        <a  href="/10th-floor"><button type="button"  class="PixellButton2">10</button></a>  
+        <a  href="/11th-floor"><button type="button" class="PixellButton2">11</button></a>     
+        <a  href="/12th-floor"><button type="button"  class="PixellButton2">12</button></a>
+        <a  href="/select-character"><button type="button"  class="PixellButton2">Back</button></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-image: url(https://cdn.discordapp.com/attachments/1018777067376087121/1106414604613066792/newbg.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 20px;
+
+    }
+
+    h1 {
+      margin: 0 auto;
+      margin-top: 20px;
+
+      text-align: center;
+      font-size: 40px;
+      font-family: 'Press Start 2P', cursive;
+      color: #ffd700;
+      text-shadow:
+        2px 2px rgba(139, 69, 19, 0.8),
+        4px 4px rgba(139, 69, 19, 0.8),
+        6px 6px rgba(139, 69, 19, 0.8),
+        8px 8px rgba(165, 42, 42, 0.8),
+        10px 10px rgba(165, 42, 42, 0.8);
+    }
+
+    .button-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button-wrapper .button {
+      display: none;
+    }
+
+    .button-wrapper label {
+      display: inline-block;
+      padding: 10px 248px;
+      margin: 5px;
+      color: #d1d1d1;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button-wrapper input[type="radio"]:checked+label {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .submit-button {
+      display: block;
+      margin-top: 18px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    p {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    .submit-button:hover {
+      background-color: #e06500;
+    }
+
+    .submit-button:active {
+      background-color: #000000;
+      transform: translateY(2px);
+    }
+
+
+    .PixellButton1 {
+      position: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 25px;
+      width: 250px;
+      height: 58px;
+      background-color: #91356e;
+      border-top: 1px #5e2448;
+      border-left: 1px #5e2448;
+      border-color: rgb(13, 15, 13);
+      border-right: 4px solid #5e2448;
+      border-bottom: 6px solid #5e2448;
+      box-shadow: -3px 0 0 0 black, 3px 0 0 0 black, 0 -3px 0 0 black, 0 3px 0 0 black;
+    }
+
+    .PixellButton1:hover {
+      background-color: #612249;
+      height: 58px;
+      border-top: 1px #2e1123;
+      border-left: 1px #2e1123;
+      border-color: rgb(67, 75, 64);
+      border-right: 6px solid #2e1123;
+      border-bottom: 8px solid #2e1123;
+    }
+
+    .PixellButton1:active {
+      background-color: #5BC0F8;
+      transform: translateY(3px);
+      width: 260px;
+      border-right: 4px solid #0081C9;
+      border-bottom: 5px solid #0081C9;
+    }
+
+    @media only screen and (max-width: 850px) {
+      .PixellButton1 {
+        background-color: #5BC0F8;
+        border-top: 1px #5BC0F8;
+        border-left: 1px #5BC0F8;
+        border-color: #0081C9;
+        border-right: 6px solid #0081C9;
+        border-bottom: 8px solid #0081C9;
+      }
+    }
+
+    .flash-messages {
+      list-style-type: none;
+      font-family: 'Press Start 2P', cursive;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      width: 100%;
+    }
+
+    .flash-messages li {
+      color: #fff;
+      background-color: #f05a4f;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .flash-messages li.success {
+      background-color: #4caf50;
+    }
+
+    .flash-messages li .close-button {
+      float: right;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .PixellButton {
+      position: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 25px;
+      width: 260px;
+      height: 60px;
+      background-color: #21EF80;
+      border-top: 1px #21EF80;
+      border-left: 1px #21EF80;
+      border-color: rgb(56, 180, 7);
+      border-right: 4px solid #00C49C;
+      border-bottom: 6px solid #00C49C;
+      box-shadow: -3px 0 0 0 black, 3px 0 0 0 black, 0 -3px 0 0 black, 0 3px 0 0 black;
+    }
+
+    .PixellButton:hover {
+      background-color: #1bc76b;
+      border-top: 1px #21EF80;
+      border-left: 1px #21EF80;
+      border-color: rgb(56, 180, 7);
+      border-right: 6px solid #039b87;
+      border-bottom: 8px solid #039b87;
+    }
+
+    .PixellButton:active {
+      background-color: #5BC0F8;
+      transform: translateY(3px);
+      width: 260px;
+      border-right: 4px solid #0081C9;
+      border-bottom: 5px solid #0081C9;
+    }
+
+    @media only screen and (max-width: 850px) {
+      .PixellButton {
+        background-color: #5BC0F8;
+        border-top: 1px #5BC0F8;
+        border-left: 1px #5BC0F8;
+        border-color: #0081C9;
+        border-right: 6px solid #0081C9;
+        border-bottom: 8px solid #0081C9;
+      }
+    }
+
+    #submit {
+      margin-top: 20px;
+    }
+
+    .character {
+      width: 360px;
+      height: auto;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .enemy {
+      width: 120px;
+      height: auto;
+      padding-bottom: 120px;
+    }
+
+    .health {
+      width: 30px;
+      height: auto;
+    }
+
+    header {
+      height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      overflow: hidden;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .score-nav {
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    .playerinfo-nav {
+      margin-left: 20px;
+    }
+
+    .question {
+      font-size: 20px;
+    }
+  </style>
+
+  <script>
+    //anti go-back command
+    window.onload = function () {
+      history.pushState(null, null, document.URL);
+      window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+      });
+    };
+
+
+  </script>
+
+</head>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class="flash-messages">
+    {% for message in messages %}
+    <li class="{{ message.category }}">
+      <span>{{ message }}</span>
+      <span class="close-button" onclick="this.parentNode.remove()">&#x2716;</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+
+  <header>
+    <nav>
+      <div class="playerinfo-nav">
+        {{ user_name }} health:
+        {% for _ in range(5) %}
+        {% if loop.index <= health %} <img class="health" src="{{ url_for('static', filename='hearts.gif') }}"
+          alt="hearts">
+          {% else %}
+          <img class="health" src="{{ url_for('static', filename='emptyhearts.png') }}" alt="empty heart">
+          {% endif %}
+          {% endfor %}
+      </div>
+
+      <div class="score-nav">
+        Score: {{ score }}
+    </nav>
+  </header>
+  <center>
+    <h1>1st Floor</h1>
+  </center>
+
+  <div class="container">
+
+
+
+
+    <form action="{{ url_for('views.fifthfloor') }}" method="POST">
+      <p class="question">{{ question.question }}</p>
+  </div>
+  <div class="battle">
+  <!-----------------------------Character------------------------------------------>
+  {% if selected_character == "RM" %}
+  <img class="character" src="{{ url_for('static', filename='RM.gif') }}" alt="RM">
+  {% elif selected_character == "Philippe" %}
+  <img class="character" src="{{ url_for('static', filename='Philippe.gif') }}" alt="Philippe">
+  {% endif %}
+  <!----------------------------------------------------------------------------------->
+
+{% for _ in range(enemies) %}
+  <img class="enemy" src="{{ url_for('static', filename='ZomGuard.gif') }}" alt="enemy">
+{% endfor %}
+</div>
+  <div class="container">
+    <div class="button-wrapper">
+      {% for choice in question.choices %}
+      <input type="radio" id="choice{{ loop.index0 }}" name="choice" value="{{ loop.index0 }}" class="button">
+      <label for="choice{{ loop.index0 }}" class="PixellButton1">{{ choice }}</label>
+      {% endfor %}
+    </div>
+    <input type="submit" value="Submit" class="PixellButton" id="submit">
+    </form>
+  </div>
+</body>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Floors Scores</h1>
+  <h2>{{ user_name }}</h2>
+
+  <h3>1st Floor Score: {{ first_floor_score.score if first_floor_score else 0 }}</h3>
+  <h3>2nd Floor Score: {{ second_floor_score.score if second_floor_score else 0 }}</h3>
+</body>
+</html>

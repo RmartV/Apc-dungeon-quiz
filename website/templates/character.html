@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Adding a GIF to HTML</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: black;
+    }
+
+    .flash-messages {
+      list-style-type: none;
+      font-family: 'Press Start 2P', cursive;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      width: 100%;
+    }
+
+    .flash-messages li {
+      color: #fff;
+      background-color: #f05a4f;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .flash-messages li.success {
+      background-color: #4caf50;
+    }
+
+    .flash-messages li .close-button {
+      float: right;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 30px;
+      font-family: 'Press Start 2P', cursive;
+      color: #ffd700;
+      text-shadow:
+        2px 2px rgba(139, 69, 19, 0.8),
+        /* dark brown shadow */
+        4px 4px rgba(139, 69, 19, 0.8),
+        /* dark brown shadow */
+        6px 6px rgba(139, 69, 19, 0.8),
+        /* dark brown shadow */
+        8px 8px rgba(165, 42, 42, 0.8),
+        /* reddish-brown shadow */
+        10px 10px rgba(165, 42, 42, 0.8);
+      /* reddish-brown shadow */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+    }
+
+    .character {
+      display: inline-block;
+      position: relative;
+      border: 3px solid transparent;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .character.selected {
+      border-color: #ffd700;
+    }
+
+    .character img {
+      display: block;
+      width: 400px;
+      height: auto;
+    }
+
+    .radio-button {
+      display: none;
+    }
+
+    .buttons{
+      text-align: center;
+    }
+    .PixellButton {
+      position: center;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 25px;
+      width: 260px;
+      height: 60px;
+
+      background-color: #21EF80;
+
+      border-top: 1px #21EF80;
+      border-left: 1px #21EF80;
+
+      border-color: rgb(56, 180, 7);
+      border-right: 4px solid #00C49C;
+      border-bottom: 6px solid #00C49C;
+
+      box-shadow: -3px 0 0 0 black,
+        3px 0 0 0 black,
+        0 -3px 0 0 black,
+        0 3px 0 0 black;
+    }
+
+    .PixellButton:hover {
+
+      background-color: #1bc76b;
+
+      border-top: 1px #21EF80;
+      border-left: 1px #21EF80;
+
+      border-color: rgb(56, 180, 7);
+      border-right: 6px solid #039b87;
+      border-bottom: 8px solid #039b87;
+    }
+
+    .PixellButton:active {
+      background-color: #5BC0F8;
+      transform: translateY(3px);
+      width: 260px;
+      border-right: 4px solid #0081C9;
+      border-bottom: 5px solid #0081C9;
+    }
+
+
+    @media only screen and (max-width: 850px) {
+      .PixellButton {
+        background-color: #5BC0F8;
+
+        border-top: 1px #5BC0F8;
+        border-left: 1px #5BC0F8;
+
+        border-color: #0081C9;
+        border-right: 6px solid #0081C9;
+        border-bottom: 8px solid #0081C9;
+      }
+
+    }
+
+    .PixellButton3 {
+
+      font-family: 'Press Start 2P', cursive;
+      font-size: 25px;
+      width: 260px;
+      height: 60px;
+      
+      background-color: rgb(208, 90, 106);
+
+      border-top: 1px rgb(90, 208, 90);
+      border-left: 1px rgb(90, 208, 90);
+
+      border-color: rgb(56, 180, 7);
+      border-right: 4px solid rgb(100, 0, 30);
+      border-bottom: 6px solid rgb(100, 0, 30);
+
+      box-shadow: -3px 0 0 0 black,
+        3px 0 0 0 black,
+        0 -3px 0 0 black,
+        0 3px 0 0 black;
+    }
+
+    .PixellButton3:hover {
+
+      background-color: rgb(187, 79, 93);
+
+      border-top: 1px rgb(187, 79, 93);
+      border-left: 1px rgb(187, 79, 93);
+
+      border-color: rgb(56, 180, 7);
+      border-right: 6px solid rgb(100, 0, 0);
+      border-bottom: 8px solid rgb(100, 0, 0);
+    }
+
+    .PixellButton3:active {
+      background-color: #5BC0F8;
+      transform: translateY(3px);
+      width: 260px;
+      border-right: 4px solid #0081C9;
+      border-bottom: 5px solid #0081C9;
+    }
+
+
+    @media only screen and (max-width: 850px) {
+      .PixellButton3 {
+        background-color: #5BC0F8;
+
+        border-top: 1px #5BC0F8;
+        border-left: 1px #5BC0F8;
+
+        border-color: #0081C9;
+        border-right: 6px solid #0081C9;
+        border-bottom: 8px solid #0081C9;
+      }
+    }
+    
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const characters = document.querySelectorAll('.character');
+      characters.forEach((character) => {
+        character.addEventListener('click', () => {
+          characters.forEach((c) => c.classList.remove('selected'));
+          character.classList.add('selected');
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class="flash-messages">
+    {% for message in messages %}
+    <li class="{{ message.category }}">
+      <span>{{ message }}</span>
+      <span class="close-button" onclick="this.parentNode.remove()">&#x2716;</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  <h1>Select your character</h1>
+  <div class="container">
+    <form action="{{ url_for('views.select_character') }}" method="POST"> <!-- Updated the form action -->
+      <div class="character">
+        <input type="radio" name="character" value="RM" id="rm-radio">
+        <label for="rm-radio">
+          <img src="/static/RM.gif" alt="RM">
+        </label>
+      </div>
+      <div class="character">
+        <input type="radio" name="character" value="Philippe" id="philippe-radio">
+        <label for="philippe-radio">
+          <img src="/static/Philippe.gif" alt="Philippe">
+        </label>
+      </div>
+  </div>
+  <div class="buttons">
+    <input type="submit" value="Submit" class="PixellButton">
+  </form>
+    <br>
+    <br>
+    <a href="/"><button class="PixellButton3">Back</button></a>
+  </div>
+  
+
+</body>
+
+</html>

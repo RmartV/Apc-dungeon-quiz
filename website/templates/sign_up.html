@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APC DUNGEON</title>
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/>
+
+<style>
+/* PIXELATE BUTTON */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body {
+    background-image: url(https://cdn.discordapp.com/attachments/1018777067376087121/1106414604613066792/newbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 90px;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  text-shadow: 
+    2px 2px rgba(139, 69, 19, 0.8), /* dark brown shadow */
+    4px 4px rgba(139, 69, 19, 0.8), /* dark brown shadow */
+    6px 6px rgba(139, 69, 19, 0.8), /* dark brown shadow */
+    8px 8px rgba(165, 42, 42, 0.8), /* reddish-brown shadow */
+    10px 10px rgba(165, 42, 42, 0.8); /* reddish-brown shadow */
+}
+
+form {
+  margin-top: 50px;
+  text-align: center  ;
+}
+
+label {
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
+input[type="email"] {
+  background-color: #152238;
+  border: 2px solid #23395d;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 1px 1px #000;
+  width: 400px;
+  margin-bottom: px;
+}
+
+input[type="password"] {
+  background-color: #152238;
+  border: 2px solid #23395d;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 1px 1px #000;
+  width: 400px;
+  margin-bottom: px;
+}
+input[type="text"] {
+  background-color: #152238;
+  border: 2px solid #23395d;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 1px 1px #000;
+  width: 400px;
+  margin-bottom: px;
+}
+
+.flash-messages {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.flash-messages li {
+  color: #fff;
+  background-color: #f05a4f;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flash-messages li.success {
+  background-color: #4caf50;
+}
+
+.flash-messages li .close-button {
+  float: right;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+.spacer{
+  padding: 10px;
+
+}
+.PixellButton{
+  position: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  width: 190px;
+  height: 45px;
+  
+  background-color: #21EF80;
+  
+  border-top: 1px #21EF80;
+  border-left: 1px #21EF80;
+
+  border-color: rgb(56, 180, 7);
+  border-right: 4px solid #00C49C; 
+  border-bottom: 6px solid #00C49C;
+
+  box-shadow:   -3px 0 0 0 black,
+                 3px 0 0 0 black,
+                 0 -3px 0 0 black,
+                 0 3px 0 0 black;
+}
+
+.PixellButton:hover{
+
+  background-color:  #1bc76b;
+  
+  border-top: 1px #21EF80;
+  border-left: 1px #21EF80;
+
+  border-color: rgb(56, 180, 7);
+  border-right: 6px solid #039b87; 
+  border-bottom: 8px solid #039b87;  
+}
+
+.PixellButton:active{
+  background-color:  #5BC0F8;
+  transform: translateY(3px);
+  width: 190px;
+  border-right: 4px solid #0081C9; 
+  border-bottom: 5px solid #0081C9;
+}
+
+
+@media only screen and (max-width: 850px){
+  .PixellButton{
+    background-color: #5BC0F8;
+  
+    border-top: 1px #5BC0F8;
+    border-left: 1px #5BC0F8;
+  
+    border-color: #0081C9;
+    border-right: 6px solid #0081C9; 
+    border-bottom: 8px solid #0081C9; 
+  }
+
+}
+
+/*button2*/
+.PixellButton2{
+  
+  font-family: 'Press Start 2P', cursive;
+  font-size: 23px;
+  width: 190px;
+  height: 45px;
+  
+  background-color: rgb(208, 90, 129);
+  
+  border-top: 1px rgb(90, 208, 90);
+  border-left: 1px rgb(90, 208, 90);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 4px solid rgb(100, 0, 83); 
+  border-bottom: 6px solid rgb(100, 0, 83);
+
+  box-shadow:   -3px 0 0 0 black,
+                 3px 0 0 0 black,
+                 0 -3px 0 0 black,
+                 0 3px 0 0 black;
+}
+
+.PixellButton2:hover{
+
+  background-color: rgb(179, 69, 120);
+  
+  border-top: 1px rgb(179, 69, 120);
+  border-left: 1px rgb(179, 69, 120);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 6px solid rgb(78, 24, 54); 
+  border-bottom: 8px solid rgb(78, 24, 54);  
+}
+
+.PixellButton2:active{
+  background-color:  #5BC0F8;
+  transform: translateY(3px);
+  width: 190px;
+  border-right: 4px solid #0081C9; 
+  border-bottom: 5px solid #0081C9;
+}
+
+
+@media only screen and (max-width: 850px){
+  .PixellButton2{
+    background-color: #5BC0F8;
+  
+    border-top: 1px #5BC0F8;
+    border-left: 1px #5BC0F8;
+  
+    border-color: #0081C9;
+    border-right: 6px solid #0081C9; 
+    border-bottom: 8px solid #0081C9; 
+  }
+
+}
+
+.PixellButton3{
+  
+  font-family: 'Press Start 2P', cursive;
+  font-size: 25px;
+  width: 260px;
+  height: 60px;
+  
+  background-color: rgb(208, 90, 106);
+  
+  border-top: 1px rgb(90, 208, 90);
+  border-left: 1px rgb(90, 208, 90);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 4px solid rgb(100, 0, 30); 
+  border-bottom: 6px solid rgb(100, 0, 30);
+
+  box-shadow:   -3px 0 0 0 black,
+                 3px 0 0 0 black,
+                 0 -3px 0 0 black,
+                 0 3px 0 0 black;
+}
+
+.PixellButton3:hover{
+
+  background-color: rgb(187, 79, 93);
+  
+  border-top: 1px rgb(187, 79, 93);
+  border-left: 1px rgb(187, 79, 93);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 6px solid rgb(100, 0, 0); 
+  border-bottom: 8px solid rgb(100, 0, 0);  
+}
+
+.PixellButton3:active{
+  background-color:  #5BC0F8;
+  transform: translateY(3px);
+  width: 260px;
+  border-right: 4px solid #0081C9; 
+  border-bottom: 5px solid #0081C9;
+}
+
+
+@media only screen and (max-width: 850px){
+  .PixellButton3{
+    background-color: #5BC0F8;
+  
+    border-top: 1px #5BC0F8;
+    border-left: 1px #5BC0F8;
+  
+    border-color: #0081C9;
+    border-right: 6px solid #0081C9; 
+    border-bottom: 8px solid #0081C9; 
+  }
+
+}
+</style>
+
+</head>
+<body>  
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for message in messages %}
+        <li class="{{ message.category }}">
+          <span>{{ message }}</span>
+          <span class="close-button" onclick="this.parentNode.remove()">&#x2716;</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
+  <center>
+  <form method="POST">
+    <h1>Sign Up</h1>
+
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter email"
+      />
+      <br>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="Enter first name"
+      />
+      <br>
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        placeholder="Enter password"
+      />
+      <br>
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        placeholder="Confirm password"
+      />
+    </div>
+    <br />
+    <br>
+    <br>
+  
+    
+    <button type="submit" class="PixellButton">Submit</button>
+   
+  </form>
+</center>
+</body>
+</html>
+
+
+
+
+

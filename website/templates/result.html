@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Score</title>
+    <style>
+        body {
+            background-image: url(https://cdn.discordapp.com/attachments/1018777067376087121/1106414604613066792/newbg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+            font-family: "Press Start 2P", cursive;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-size: 30px;
+            font-family: 'Press Start 2P', cursive;
+            color: #ffd700;
+            text-shadow:
+                2px 2px rgba(139, 69, 19, 0.8),
+                /* dark brown shadow */
+                4px 4px rgba(139, 69, 19, 0.8),
+                /* dark brown shadow */
+                6px 6px rgba(139, 69, 19, 0.8),
+                /* dark brown shadow */
+                8px 8px rgba(165, 42, 42, 0.8),
+                /* reddish-brown shadow */
+                10px 10px rgba(165, 42, 42, 0.8);
+            /* reddish-brown shadow */
+        }
+
+        table {
+            background-color: #0091ff;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 0px;
+        }
+
+        th {
+            background-color: #064d83;
+            border: 1px solid #064d83;
+            padding: 20px 60px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        td {
+            border: 1px solid #0091ff;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        .PixellButton {
+            position: center;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 20px;
+            width: 640px;
+            height: 50px;
+
+            background-color: #21EF80;
+
+            border-top: 1px #21EF80;
+            border-left: 1px #21EF80;
+
+            border-color: rgb(56, 180, 7);
+            border-right: 4px solid #00C49C;
+            border-bottom: 6px solid #00C49C;
+
+            box-shadow: -3px 0 0 0 black,
+                3px 0 0 0 black,
+                0 -3px 0 0 black,
+                0 3px 0 0 black;
+        }
+
+        .PixellButton:hover {
+
+            background-color: #1bc76b;
+
+            border-top: 1px #21EF80;
+            border-left: 1px #21EF80;
+
+            border-color: rgb(56, 180, 7);
+            border-right: 6px solid #039b87;
+            border-bottom: 8px solid #039b87;
+        }
+
+        .PixellButton:active {
+            background-color: #5BC0F8;
+            transform: translateY(3px);
+            width: 640px;
+            border-right: 4px solid #0081C9;
+            border-bottom: 5px solid #0081C9;
+        }
+
+
+        @media only screen and (max-width: 850px) {
+            .PixellButton {
+                background-color: #5BC0F8;
+
+                border-top: 1px #5BC0F8;
+                border-left: 1px #5BC0F8;
+
+                border-color: #0081C9;
+                border-right: 6px solid #0081C9;
+                border-bottom: 8px solid #0081C9;
+            }
+
+        }
+
+        .PixellButton3 {
+
+            font-family: 'Press Start 2P', cursive;
+            font-size: 20px;
+            width: 640px;
+            height: 50px;
+
+            background-color: rgb(208, 90, 106);
+
+            border-top: 1px rgb(90, 208, 90);
+            border-left: 1px rgb(90, 208, 90);
+
+            border-color: rgb(56, 180, 7);
+            border-right: 4px solid rgb(100, 0, 30);
+            border-bottom: 6px solid rgb(100, 0, 30);
+
+            box-shadow: -3px 0 0 0 black,
+                3px 0 0 0 black,
+                0 -3px 0 0 black,
+                0 3px 0 0 black;
+        }
+
+        .PixellButton3:hover {
+
+            background-color: rgb(187, 79, 93);
+
+            border-top: 1px rgb(187, 79, 93);
+            border-left: 1px rgb(187, 79, 93);
+
+            border-color: rgb(56, 180, 7);
+            border-right: 6px solid rgb(100, 0, 0);
+            border-bottom: 8px solid rgb(100, 0, 0);
+        }
+
+        .PixellButton3:active {
+            background-color: #5BC0F8;
+            transform: translateY(3px);
+            width: 640px;
+            border-right: 4px solid #0081C9;
+            border-bottom: 5px solid #0081C9;
+        }
+
+
+        @media only screen and (max-width: 850px) {
+            .PixellButton3 {
+                background-color: #5BC0F8;
+
+                border-top: 1px #5BC0F8;
+                border-left: 1px #5BC0F8;
+
+                border-color: #0081C9;
+                border-right: 6px solid #0081C9;
+                border-bottom: 8px solid #0081C9;
+            }
+        }
+
+        .container {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: #0b0c3ad3;
+            width: 680px;
+            margin: 0 auto;
+            margin-top: 0px;
+            padding-top: 20px;
+        }
+
+        .character {
+            width: 100px;
+            height: auto;
+            margin: 0px;
+            padding: 0;
+        }
+
+        .characters {
+            margin: 0;
+            padding: 0;
+        }
+
+        .name {
+            font-size: 24px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Summary</h1>
+        <div class="characters">
+            {% if selected_character == "RM" %}
+            <img class="character" src="{{ url_for('static', filename='RMR.gif') }}" alt="RM">
+            {% elif selected_character == "Philippe" %}
+            <img class="character" src="{{ url_for('static', filename='PhilippeR.gif') }}" alt="Philippe">
+            {% endif %}
+        </div>
+        <p class="name">{{ user_name }}</p>
+        <div class="scores">
+            {% if score >= 8 %}
+            <p>Congratulations! <br><br> You scored: {{ score }}.</p>
+            {% else %}
+            <p>Nice try! <br><br> You scored:
+            <p style=color:#ffd700;>{{ score }}</p>
+            </p>
+            {% endif %}
+        </div>
+        <h3>Top Scorers</h3>
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+            {% for score in scores %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ score.user.first_name }}</td>
+                <td>{{ score.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <a href="/"><button class="PixellButton">Home</button></a>
+        <a href="/floors"><button class="PixellButton3">Select Floors</button></a>
+            <br>
+            <br>
+    </div>
+</body>
+
+</html>
