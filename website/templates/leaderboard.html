@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Leaderboard</title>
+    <link rel="icon" type="image/x-icon"
+    href="https://cdn.discordapp.com/attachments/1018777067376087121/1109567257845186660/icon.png">
     <style>
       body {
         background-image: url(https://cdn.discordapp.com/attachments/1018777067376087121/1106414604613066792/newbg.png);
@@ -133,7 +135,6 @@
         <th>Rank</th>
         <th>User</th>
         <th>Score</th>
-        <th>Action</th>
       </tr>
 
       {% for score in scores %}
@@ -142,12 +143,6 @@
         <td>{{ score['user'].first_name }}</td>
         <td>{{ score['score'] }}</td>
         <td>
-          <form
-            method="POST"
-            action="{{ url_for('views.delete_score', score_id=score['user'].id) }}"
-          >
-            <button type="submit">Delete</button>
-          </form>
         </td>
       </tr>
       {% endfor %}

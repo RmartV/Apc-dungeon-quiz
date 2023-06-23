@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon"
+  href="https://cdn.discordapp.com/attachments/1018777067376087121/1109567257845186660/icon.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -222,7 +224,7 @@
     }
 
     .character {
-      width: 360px;
+      width: 260px;
       height: auto;
       margin-bottom: 0;
       padding-bottom: 0;
@@ -231,9 +233,15 @@
     .enemy {
       width: 120px;
       height: auto;
-      padding-bottom: 120px;
+      padding-bottom: 0px;
+      position: flex;
     }
-
+    .battle{
+      height: 43vh;
+      display: flex;
+  align-items: center;
+  justify-content: center;
+    }
     .health {
       width: 30px;
       height: auto;
@@ -269,17 +277,12 @@
     }
   </style>
 
-  <script>
-    //anti go-back command
-    window.onload = function () {
-      history.pushState(null, null, document.URL);
-      window.addEventListener('popstate', function () {
-        history.pushState(null, null, document.URL);
-      });
-    };
-
-
-  </script>
+<script type="text/javascript">
+  window.history.forward();
+  function noBack() {
+      window.history.forward();
+  }
+</script>
 
 </head>
 
@@ -332,6 +335,8 @@
   <img class="character" src="{{ url_for('static', filename='RM.gif') }}" alt="RM">
   {% elif selected_character == "Philippe" %}
   <img class="character" src="{{ url_for('static', filename='Philippe.gif') }}" alt="Philippe">
+  {% elif selected_character == "Aliyah" %}
+  <img class="character" src="{{ url_for('static', filename='Aliyah.gif') }}" alt="Aliyah">
   {% endif %}
   <!----------------------------------------------------------------------------------->
 

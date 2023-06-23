@@ -10,12 +10,12 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @login_required
 def home():
-    return render_template('index.html')
+    return render_template('index.html', play_music=True)
 
 @views.route('/about-us')
 @login_required
 def aboutus():
-    return render_template('about-us.html')
+    return render_template('about-us.html', play_music=True)
 
 @views.route('/1st-floor', methods=['GET', 'POST'])
 @login_required
@@ -59,8 +59,14 @@ def firstfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+
+                firstfloor_scores = FirstFloor.query.order_by(FirstFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=firstfloor_scores)
 
         # Update the enemies and health in the session
         session['enemies'] = enemies
@@ -147,8 +153,14 @@ def secondfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+
+                secondfloor_scores = SecondFloor.query.order_by(SecondFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=secondfloor_scores)
 
         # Update the enemies and health in the session
         session['enemies'] = enemies
@@ -235,8 +247,15 @@ def thirdfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+
+                thirdfloor_scores = ThirdFloor.query.order_by(ThirdFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=thirdfloor_scores)
+
 
         # Update the enemies and health in the session
         session['enemies'] = enemies
@@ -319,8 +338,13 @@ def fourthfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                fourthfloor_scores = FourthFloor.query.order_by(FourthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=fourthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -399,8 +423,13 @@ def fifthfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                fifthfloor_scores = FifthFloor.query.order_by(FifthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=fifthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -480,8 +509,13 @@ def sixthfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                sixthfloor_scores = SixthFloor.query.order_by(SixthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=sixthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -560,8 +594,13 @@ def seventhfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                seventhfloor_scores = SeventhFloor.query.order_by(SeventhFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=seventhfloor_scores)
 
 
         session['enemies'] = enemies
@@ -640,8 +679,13 @@ def eightfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                eighthfloor_scores = EighthFloor.query.order_by(EighthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=eighthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -720,8 +764,13 @@ def ninthfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                ninthfloor_scores = NinthFloor.query.order_by(NinthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=ninthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -800,8 +849,13 @@ def tenthfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                tenthfloor_scores = TenthFloor.query.order_by(TenthFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=tenthfloor_scores)
 
 
         session['enemies'] = enemies
@@ -880,8 +934,13 @@ def eleventhfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                eleventhfloor_scores = EleventhFloor.query.order_by(EleventhFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=eleventhfloor_scores)
 
 
         session['enemies'] = enemies
@@ -960,8 +1019,14 @@ def twelvethfloor():
                     db.session.add(user_score)
                 db.session.commit()
 
+                session.pop('score', None)
+                session.pop('current_question', None)
+                session.pop('enemies', None)
+                session.pop('health', None)
                 selected_character = session.get('selected_character', '')
-                return redirect(url_for('views.result', character=selected_character))
+                twelvethfloor_scores = TwelvethFloor.query.order_by(TwelvethFloor.score.desc()).all()
+                return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=twelvethfloor_scores)
+
 
 
         session['enemies'] = enemies
@@ -989,7 +1054,7 @@ def twelvethfloor():
             session.pop('health', None)
             selected_character = session.get('selected_character', '')
             twelvethfloor_scores = TwelvethFloor.query.order_by(TwelvethFloor.score.desc()).all()
-            return render_template('result.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=twelvethfloor_scores)
+            return render_template('12thresult.html', user_name=user_name, score=score, total_questions=len(quiz_questions), selected_character=selected_character, scores=twelvethfloor_scores)
 
     session.pop('score', None)
     session.pop('current_question', None)
@@ -1007,7 +1072,7 @@ def twelvethfloor():
 def leaderboard():
     user_scores = {}
 
-    floors = [SecondFloor, FirstFloor, ThirdFloor, FourthFloor, FifthFloor, SixthFloor, SeventhFloor, EighthFloor, NinthFloor]
+    floors = [SecondFloor, FirstFloor, ThirdFloor, FourthFloor, FifthFloor, SixthFloor, SeventhFloor, EighthFloor, NinthFloor, TenthFloor, EleventhFloor, TwelvethFloor]
     for floor in floors:
         scores = floor.query.order_by(floor.score.desc()).all()
         for score in scores:
@@ -1022,14 +1087,18 @@ def leaderboard():
 
     return render_template('leaderboard.html', scores=sorted_scores)
 
-
-@views.route('/delete_score/<int:score_id>', methods=['POST'])
-def delete_score(score_id):
-    score = SecondFloor.query.get_or_404(score_id)
-    db.session.delete(score)
-    db.session.commit()
-    flash('Score deleted successfully', 'success')
-    return redirect(url_for('views.leaderboard'))
+@views.route('/result')
+@login_required
+def result():
+    user_name = current_user.first_name
+    score = session.get('score', 0)
+    total_questions = session.get('current_question', 0)
+    session.pop('score', None)
+    session.pop('current_question', None)
+    session.pop('enemies', None)
+    session.pop('health', None)
+    selected_character = session.get('selected_character', '')
+    return render_template('result.html', user_name=user_name, score=score, selected_character=selected_character)
 
 @views.route('/select-character', methods=['GET', 'POST'])
 @login_required
@@ -1043,6 +1112,11 @@ def select_character():
 
         session['selected_character'] = selected_character
 
+        session.pop('score', None)
+        session.pop('current_question', None)
+        session.pop('enemies', None)
+        session.pop('health', None)
+        
         return render_template('story1.html')
 
     return render_template('character.html')
@@ -1050,14 +1124,15 @@ def select_character():
 @views.route('/floors')
 @login_required
 def select_floor():
+    session.pop('score', None)
+    session.pop('current_question', None)
+    session.pop('enemies', None)
+    session.pop('health', None)
     return render_template('floor.html')
 
+@views.route('/ending')
+@login_required
+def ending():
+    return render_template('ending.html')
 
-#@views.route('/all-floors')
-#@login_required
-#def all_floors():
-#   user_name = current_user.first_name
-#    first_floor_score = Score.query.filter_by(user_id=current_user.id).first()
-#    second_floor_score = Score.query.filter_by(user_id=current_user.id).first()
-#    return render_template('all_floors.html', user_name=user_name, first_floor_score=first_floor_score, second_floor_score=second_floor_score)
 

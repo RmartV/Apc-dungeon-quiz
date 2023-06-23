@@ -2,7 +2,9 @@
 <html>
 
 <head>
-  <title>Adding a GIF to HTML</title>
+  <title>APC DUNGEON</title>
+  <link rel="icon" type="image/x-icon"
+  href="https://cdn.discordapp.com/attachments/1018777067376087121/1109567257845186660/icon.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -87,7 +89,7 @@
 
     .character img {
       display: block;
-      width: 400px;
+      width: 200px;
       height: auto;
     }
 
@@ -95,9 +97,10 @@
       display: none;
     }
 
-    .buttons{
+    .buttons {
       text-align: center;
     }
+
     .PixellButton {
       position: center;
       font-family: 'Press Start 2P', cursive;
@@ -161,7 +164,7 @@
       font-size: 25px;
       width: 260px;
       height: 60px;
-      
+
       background-color: rgb(208, 90, 106);
 
       border-top: 1px rgb(90, 208, 90);
@@ -210,7 +213,6 @@
         border-bottom: 8px solid #0081C9;
       }
     }
-    
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -240,28 +242,34 @@
   {% endwith %}
   <h1>Select your character</h1>
   <div class="container">
-    <form action="{{ url_for('views.select_character') }}" method="POST"> <!-- Updated the form action -->
+    <form action="{{ url_for('views.select_character') }}" method="POST">
       <div class="character">
         <input type="radio" name="character" value="RM" id="rm-radio">
         <label for="rm-radio">
-          <img src="/static/RM.gif" alt="RM">
+          <img src="/static/RMR.gif" alt="RM">
         </label>
       </div>
       <div class="character">
         <input type="radio" name="character" value="Philippe" id="philippe-radio">
         <label for="philippe-radio">
-          <img src="/static/Philippe.gif" alt="Philippe">
+          <img src="/static/PhilippeR.gif" alt="Philippe">
+        </label>
+      </div>
+      <div class="character">
+        <input type="radio" name="character" value="Aliyah" id="aliyah-radio">
+        <label for="aliyah-radio">
+          <img src="/static/Aliyah.gif" alt="Aliyah">
         </label>
       </div>
   </div>
   <div class="buttons">
     <input type="submit" value="Submit" class="PixellButton">
-  </form>
+    </form>
     <br>
     <br>
     <a href="/"><button class="PixellButton3">Back</button></a>
   </div>
-  
+
 
 </body>
 
